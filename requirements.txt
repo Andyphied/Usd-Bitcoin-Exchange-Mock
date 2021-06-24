@@ -1,0 +1,11 @@
+fastapi==0.63.0
+py==1.10.0
+pyasn1==0.4.8
+pydantic==1.8.1
+PyYAML==5.4.1
+python-dotenv==0.18.0
+requests==2.22.0
+starlette==0.13.6
+uvicorn==0.13.4
+yapf==0.30.0
+zipp==3.4.1

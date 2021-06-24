@@ -1,0 +1,27 @@
+version: 1
+disable_existing_loggers: False
+filters: 
+  appFilter:
+    (): core.logger.AppFilter
+formatters:
+  json:
+    format: "'[%(asctime)s] %(process)s %(request_id)s %(correlation_id)s' %(levelname)s %(name)s:%(funcName)s:%(lineno)s %(message)s"
+  plaintext:
+    format: "'[%(asctime)s] %(process)s %(request_id)s %(correlation_id)s' %(levelname)s %(name)s:%(funcName)s:%(lineno)s %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: plaintext
+    level: DEBUG
+    stream: ext://sys.stdout
+    filters: [appFilter]
+root:
+  level: DEBUG
+  propagate: True
+  handlers: [console]
+loggers:
+  urllib3:
+    level: INFO
+  uvicorn:
+    level: INFO
+  
